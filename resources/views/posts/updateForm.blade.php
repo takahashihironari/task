@@ -16,7 +16,7 @@
 
 <h5 class='page-header'>本文</h5>
 <div class="form-group">
-{!! Form::input('text', 'upPost', $post->post, ['required', 'class' => 'form-control']) !!}
+{!! Form::input('text', 'upPost', $post->contents, ['required', 'class' => 'form-control']) !!}
 </div>
 
     @if ($errors->any())

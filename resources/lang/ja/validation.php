@@ -89,7 +89,7 @@ return [
     'min'                  => [
         'numeric' => ':attributeには、:min以上の数字を指定してください。',
         'file'    => ':attributeには、:min kB以上のファイルを指定してください。',
-        'string'  => ':attributeは、:min文字以上で指定してください。',
+        'string'  => 'パスワードは:min文字以上で入力してください。',
         'array'   => ':attributeは:min個以上指定してください。',
     ],
     'multiple_of' => ':attributeには、:valueの倍数を指定してください。',
@@ -99,7 +99,7 @@ return [
     'password'             => '正しいパスワードを指定してください。',
     'present'              => ':attributeが存在していません。',
     'regex'                => '正しい形式で入力してください。',
-    'required'             => ':attributeは必ず指定してください。',
+    'required'             => '名前は必ず指定してください。',
     'required_if'          => ':otherが:valueの場合、:attributeも指定してください。',
     'required_unless'      => ':otherが:valuesでない場合、:attributeを指定してください。',
     'required_with'        => ':valuesを指定する場合は、:attributeも指定してください。',
@@ -120,7 +120,7 @@ return [
     'starts_with'          => ':attributeには、:valuesのどれかで始まる値を指定してください。',
     'string'               => ':attributeは文字列を指定してください。',
     'timezone'             => ':attributeには、有効なゾーンを指定してください。',
-    'unique'               => ':attributeの値は既に存在しています。',
+    'unique'               => 'このメールアドレスは登録済みです。',
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeに正しい形式を指定してください。',
     'uuid'                 => ':attributeに有効なUUIDを指定してください。',
@@ -154,5 +154,7 @@ return [
     */
 
     'attributes' => [],
+    'full_width_space' => ':attributeには全角スペースを含めることはできません。',
+
 
 ];

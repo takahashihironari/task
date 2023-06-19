@@ -28,9 +28,9 @@ $lists = DB::table('posts');
 
   $keyword = $request->input('keyword');
   // もしキーワードがあったら
-  if(!empty($keyword)&&preg_match('/^[あ-んa-zA-Z0-9]+$/',$keyword))
+  if(!empty($keyword)||$keyword==0)
   {
-    $lists->where('post','Like', "%$keyword%");
+    $lists->where('contents','Like',  "%${keyword}%");
 
   }
 $list= $lists->get();
@@ -70,12 +70,10 @@ return view('posts.updateForm', ['post' => $post]);
 public function update(Request $request)
 
 {
-
-
 $request->validate(
     [
-     'upPost' => 'max:100|regex:/^[あ-んa-zA-Z0-9]+$/',
-    'name' =>'regex:/^[あ-んa-zA-Z0-9]+$/'
+     'upPost' => 'max:100|regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/',
+    'name' =>'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/'
 ]
 );
 
@@ -85,7 +83,7 @@ $name = $request->input('name');
 DB::table('posts')
 ->where('id', $id)
 ->update(
-['post' => $post,
+['contents' => $post,
 'user_name' => $name
 ]
 );
@@ -128,15 +126,15 @@ public function create(Request $request)
 
 $request->validate(
     [
-    'newPost' => 'max:100|regex:/^[あ-んa-zA-Z0-9]+$/',
-    'name' =>'regex:/^[あ-んa-zA-Z0-9]+$/'
+    'newPost' => 'max:100|regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/',
+    'name' =>'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/'
 ]
 );
 $post = $request->input('newPost');
 $name = $request->input('name');
 
 DB::table('posts')->insert([
-'post' => $post,
+'contents' => $post,
 'user_name' => $name
 ]);
 return redirect('/');

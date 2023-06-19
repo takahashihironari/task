@@ -66,7 +66,7 @@
   <span class=name>{{ $list->user_name }}</span>
   <span class=created>{{ $list->created_at }}</span>
 </div>
-<div class=post>{{ $list->post}}</div>
+<div class=post>{{ $list->contents}}</div>
 <a class="btn btn-primary" href="/post/{{ $list->id }}/update-form">編集</a>
 <a class="btn btn-danger" href="/post/{{ $list->id }}/delete"onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
 @endforeach

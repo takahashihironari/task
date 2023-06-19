@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\DB;
 
 class users extends Migration
 {
@@ -42,6 +42,6 @@ $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CU
      */
     public function down()
     {
-        //
+         Schema::drop('users');
     }
 }
