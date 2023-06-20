@@ -9,14 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
-
-
 // トップ画面
 public function index()
 {
 $list = DB::table('posts')->get();
 return view('posts.index',['lists'=>$list]);
-
 
 }
 
@@ -35,8 +32,9 @@ public function search(Request $request)
 
 $list= $lists->get();
 return view('posts.index',['lists'=>$list]);
-
 }
+
+
 
 //ログイン
 public function __construct()

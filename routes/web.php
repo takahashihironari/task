@@ -14,31 +14,22 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// ログインページ
-// Route::get('/', function ()
-// {
-//     return view('auth.login');
-// });
 
+//認証系ルート定義
 Auth::routes();
-// Route::get('/home', 'HomeController@index')->name('home');
 
 // トップページ
 Route::get('/', [PostsController::class, 'index']);
 
-
 // 検索
 Route::get('/search', [PostsController::class, 'search']);
-
 
 // 更新
 Route::get('post/{id}/update-form', [PostsController::class, 'updateForm']);
 Route::post('post/update', [PostsController::class, 'update']);
 
-
 // 削除
 Route::get('post/{id}/delete', [PostsController::class, 'delete']);
-
 
 // 投稿
 Route::post('post/create', [PostsController::class, 'create']);
