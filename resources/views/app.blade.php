@@ -17,7 +17,7 @@
 
 <header>
 
-<h1 class='page-header'>Laravelを使った投稿機能の実装</h1>
+<h1 class='page-header'>L</h1>
 
 </header>
 
