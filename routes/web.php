@@ -33,3 +33,5 @@ Route::get('post/{id}/delete', [PostsController::class, 'delete']);
 
 // 投稿
 Route::post('post/create', [PostsController::class, 'create']);
+// 投稿
+Route::post('post/createtest', [PostsController::class, 'create']);
